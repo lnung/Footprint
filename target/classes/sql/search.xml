@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="SearchMapper">
+	
+	<insert id="insertWord" parameterType="string">
+		INSERT INTO search VALUES(#{value}, 1)
+	</insert>
+
+	<update id="updateCount" parameterType="string">
+		UPDATE search SET count = count + 1 WHERE word = #{value}
+	</update>
+	
+		<!-- 검색한 조회수가 랭킹별로 10위까지만 검색 :: rank() over() 사용 CDATA 문법! -->
+	<select id= "getBestWord" resultType="string">
+		<![CDATA[
+		SELECT word, RANKING FROM(
+			SELECT word, count, RANK() OVER(ORDER BY count DESC) As RANKING FROM search)
+		WHERE RANKING <= 10
+		]]>
+	</select>
+	
+	<select id="searchMemberTipBoard" resultType="memberTipBoard">
+		SELECT no, title, count, w_date, id
+		FROM membertip_board
+	</select>
+	
+	<select id="searchAdminTipBoard" resultType="adminTipBoard">
+		SELECT no, title, count, w_date, id
+		FROM admintip_board
+	</select>
+	
+	<select id="searchAdminBoard" resultType="adminBoard">
+		SELECT no, title, count, w_date, id
+		FROM admin_board
+	</select>
+	
+	<select id="searchMemberBoard" resultType="memberBoard">
+		SELECT location, content, img, w_date, id, city
+		FROM member_board
+	</select>
+</mapper>

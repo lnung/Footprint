@@ -1,0 +1,3 @@
+insert into map_information values('아시아','부탄','팀부', 27.472802, 89.639285);
+insert into map_information values('아시아','부탄','모티탕', 27.475654, 89.608682);
+insert into map_information values('아시아','부탄','셈토카', 27.440571, 89.669885);

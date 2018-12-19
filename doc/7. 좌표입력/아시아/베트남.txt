@@ -1,0 +1,13 @@
+insert into map_information values('아시아','베트남','껀터', 10.045131, 105.746906);
+insert into map_information values('아시아','베트남','꾸이년', 13.782931, 109.219709);
+insert into map_information values('아시아','베트남','냐짱', 12.238816, 109.196761);
+insert into map_information values('아시아','베트남','다낭', 16.054428, 108.202165);
+insert into map_information values('아시아','베트남','달랏', 11.940288, 108.458412);
+insert into map_information values('아시아','베트남','라오까이', 22.481703, 103.971697);
+insert into map_information values('아시아','베트남','붕따우', 10.411242, 107.136097);
+insert into map_information values('아시아','베트남','빈', 18.679505, 105.681386);
+insert into map_information values('아시아','베트남','탄 호아', 19.806688, 105.785225);
+insert into map_information values('아시아','베트남','하노이', 21.025139, 105.828387);
+insert into map_information values('아시아','베트남','하이퐁', 20.842723, 106.683689);
+insert into map_information values('아시아','베트남','호치민', 10.823002, 106.629784);
+insert into map_information values('아시아','베트남','후에', 16.463626, 107.590889);

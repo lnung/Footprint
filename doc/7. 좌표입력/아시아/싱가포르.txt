@@ -1,0 +1,1 @@
+insert into map_information values('¾Æ½Ã¾Æ','½Ì°¡Æ÷¸£','ÁÖ·Õ¼¶', 1.276021, 103.675925);

@@ -1,0 +1,5 @@
+insert into map_information values('¾Æ½Ã¾Æ','¸ù°ñ','°íºñ»ç¸·', 43.664196, 101.523915);
+insert into map_information values('¾Æ½Ã¾Æ','¸ù°ñ','¿¡¸£µ¥³×Æ®', 49.054071, 104.071641);
+insert into map_information values('¾Æ½Ã¾Æ','¸ù°ñ','¿ï¶õ¹ÙÅä¸£', 47.886451, 106.905767);
+insert into map_information values('¾Æ½Ã¾Æ','¸ù°ñ','Å×¸¦Áö ±¹¸³°ø¿ø', 42.795151, 105.032293);
+insert into map_information values('¾Æ½Ã¾Æ','¸ù°ñ','È©½º°ñ', 50.220447, 100.321373);

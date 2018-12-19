@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ReviewBoardMapper">
+
+	<resultMap type="reviewBoard" id="reviewBoardListRM">
+	 	<result property="no" column="no"/>
+	 	<result property="title" column="title"/>
+	 	<result property="count" column="count"/>
+	 	<result property="wDate" column="w_date"/><!-- 주의 -->
+	 	<result property="member.id" column="id"/>
+	 </resultMap> 
+	
+	<resultMap type="reviewBoard" id="reviewBoardRM" extends="reviewBoardListRM">
+		<result property="content" column="content"/>
+		<result property="img" column="img"/>
+		<result property="nation.city" column="city"/>
+		<!-- FileUpload 부분 추가함 -->
+		<result property="orgfilename" column="orgfilename"/>
+		<result property="newfilename" column="newfilename"/>
+	</resultMap>
+
+	<insert id="writeReviewBoard" parameterType="reviewBoard">
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			SELECT review_board_seq.nextVal FROM dual
+		</selectKey>
+		INSERT INTO review_board 
+		(no, title, content, count, w_date, id, img, orgfilename, newfilename, city)
+		VALUES(#{no},#{title},#{content},#{count},sysdate,#{member.id},#{img},#{orgfilename},#{newfilename},#{nation.city})
+	</insert>
+	
+	<select id="showReviewContent" resultMap="reviewBoardRM" parameterType="int">
+		SELECT no, title, content, count, w_date, id, img, orgfilename, newfilename, city
+		FROM review_board
+		WHERE no=#{value}
+	</select>
+	
+	<!-- <select id="showReviewContent" resultMap="reviewBoardRM" resultType="reviewBoard" parameterType="int">
+		SELECT no, title, count, w_date, content, m.id, m.name,
+		orgfilename, newfilename
+		FROM review_board r, member m
+		WHERE r.id = m.id AND r.no=#{value}
+	</select> -->
+	
+	<update id="updateReviewCount" parameterType="int">
+		UPDATE review_board SET count=count+1 WHERE no=#{value}
+	</update>
+	
+	<delete id="deleteReviewBoard" parameterType="int">
+		DELETE FROM review_board WHERE no=#{value}
+	</delete>
+	
+	<update id="updateReviewBoard" parameterType="reviewBoard">
+		UPDATE review_board
+		SET title=#{title}, content=#{content}, w_date=sysdate, city=#{nation.city},
+		img=#{img}, orgfilename = #{orgfilename}, newfilename=#{newfilename}
+		WHERE no=#{no} 
+	</update>
+	
+	<select id="totalReviewCount" resultType="int">
+		SELECT COUNT(-1) FROM review_board
+	</select>
+	
+	<select id="getReviewBoardList" resultMap="reviewBoardListRM" parameterType="int">
+		SELECT no, title, count, w_date, id FROM
+		(SELECT no, title, count, w_date, CEIL(rownum/5) as page, id FROM
+		(SELECT no, title, count, to_char(w_date, 'YYYY.MM.DD') w_date, id 
+		FROM review_board ORDER BY no DESC))
+		WHERE page=#{value}
+	</select>
+	
+	<!-- <select id="getMyReviewBoardList" resultMap="reviewBoardListRM" parameterType="int" resultType="reviewBoard">
+		SELECT no, title, count, w_date, id FROM
+		(SELECT no, title, count, w_date, CEIL(rownum/5) as page, id FROM
+		(SELECT no, title, count, to_char(w_date, 'YYYY.MM.DD') w_date, id 
+		FROM review_board r, member m
+		WHERE r.id=m.id ORDER BY no DESC)) WHERE page=#{value}
+	</select> -->
+	
+</mapper>	

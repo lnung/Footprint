@@ -1,0 +1,28 @@
+/* ****************************** */
+/*           munubar.css           */
+/* ****************************** */
+
+.contents{
+   padding-top: 50px;
+}
+
+#header {
+    /*  border-bottom: 7px solid transparent;
+     -moz-border-imag: -moz-linear-gradient(left, #5d8bc2, #95b3d7);
+   -webkit-border-image: -webkit-linear-gradient(left, #5d8bc2, #95b3d7);
+     border-image: linear-gradient(to right, #5d8bc2, #95b3d7);
+     border-image-slice: 1; */
+     margin-top: 8px;
+     padding-bottom: 8px;
+     font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS";
+     font-size: 14px;
+     background-image: linear-gradient(#5d8bc2 , #bfd1e7);
+}
+
+.caret {
+     margin-left: 10px
+}
+
+.text-success {
+    color: white;
+}

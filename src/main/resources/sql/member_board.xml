@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberBoardMapper">
+	<resultMap type="memberBoard" id="memberBoardListRM">
+       <result property="location" column="location"/>
+       <result property="content" column="content"/>
+       <result property="wDate" column="w_date"/><!-- 주의 -->
+       <result property="tripDate" column="trip_date"/><!-- 주의 -->
+       <result property="member.id" column="id"/>
+       <result property="mapInformation.city" column="city"/>
+    </resultMap> 
+
+	<sql id="insert-memberBoard">
+		location, content, w_date, trip_date, id, city
+	</sql>
+
+	<sql id="select-memberBoard">
+		select 
+		location, content, w_date, trip_date, id, city
+		from member_board
+	</sql>
+
+	<insert id="writeMemberBoard" parameterType="memberBoard">
+		insert into member_board
+		(<include refid="insert-memberBoard"/>)
+		values(#{location}, #{content}, sysdate, #{tripDate}, #{member.id}, #{mapInformation.city})
+	</insert>
+	
+	<select id="showMemberBoard" parameterType="memberBoard" resultMap="memberBoardListRM">
+		<include refid="select-memberBoard"/>
+		where id=#{member.id} and city=#{mapInformation.city}
+	</select>
+	
+	<select id="selectMapList" parameterType="string" resultType="string">
+		select distinct(city)
+		from member_board
+		where id=#{value}
+	</select>
+   
+	<delete id="deleteMemberBoard" parameterType="memberBoard">
+		delete from member_board
+		where id=#{member.id} and location=#{location}
+	</delete>
+	
+	<update id="updateMemberBoard" parameterType="memberBoard">
+		update member_board
+		set location=#{location}, content=#{content}, w_date=sysdate, trip_date=#{tripDate}, city=#{mapInformation.city}
+		where id=#{member.id} and location=#{location}
+	</update>
+	
+	<select id="citycheck" parameterType="string" resultType="boolean">
+		SELECT count(*) FROM  WHERE city = #{value}
+	</select>
+</mapper>   

@@ -1,0 +1,9 @@
+insert into map_information values('유럽', '네덜란드', '암스테르담', 52.373591, 4.891311);
+insert into map_information values('유럽', '네덜란드', '덴하그', 52.067527, 4.295142);
+insert into map_information values('유럽', '네덜란드', '로테르담', 51.924278, 4.469475);
+insert into map_information values('유럽', '네덜란드', '호로닝언', 53.219398, 6.566563);
+insert into map_information values('유럽', '네덜란드', '덴헨데르', 52.956294, 4.760816);
+insert into map_information values('유럽', '네덜란드', '알크마르', 52.632388, 4.753378);
+insert into map_information values('유럽', '네덜란드', '덴하그', 52.070502, 4.300701);
+insert into map_information values('유럽', '네덜란드', '브레다', 51.571921, 4.768324);
+insert into map_information values('유럽', '네덜란드', '에인트호번', 51.441649, 5.469722);

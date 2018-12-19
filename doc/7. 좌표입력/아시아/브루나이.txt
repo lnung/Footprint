@@ -1,0 +1,2 @@
+insert into map_information values('아시아','브루나이','반다스리브가완', 4.903472, 114.939917);
+insert into map_information values('아시아','브루나이','사라왁', 1.553506, 110.359289);

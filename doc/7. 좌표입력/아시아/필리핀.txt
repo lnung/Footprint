@@ -1,0 +1,12 @@
+insert into map_information values('아시아','필리핀','다바오', 7.190909, 125.455622);
+insert into map_information values('아시아','필리핀','마닐라', 14.599535, 120.984229);
+insert into map_information values('아시아','필리핀','보라카이 섬', 11.967444, 121.924794);
+insert into map_information values('아시아','필리핀','보홀 섬', 9.889224, 124.217449);
+insert into map_information values('아시아','필리핀','잠보앙가', 6.921347, 122.078774);
+insert into map_information values('아시아','필리핀','세부', 10.315695, 123.885429);
+insert into map_information values('아시아','필리핀','엘로엘로', 10.720158, 122.562106);
+insert into map_information values('아시아','필리핀','제네랄산토스', 6.116409, 125.171621);
+insert into map_information values('아시아','필리핀','카가얀데오로', 8.454489, 124.631593);
+insert into map_information values('아시아','필리핀','카바나투안', 11.254345, 124.961711);
+insert into map_information values('아시아','필리핀','타클로반', 7.190909, 125.455622);
+insert into map_information values('아시아','필리핀','푸에르토프린세사', 10.720158, 122.562106);

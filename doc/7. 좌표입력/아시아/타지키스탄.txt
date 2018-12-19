@@ -1,0 +1,3 @@
+insert into map_information values('아시아','타지키스탄','두샨베', 38.559791, 68.787036);
+insert into map_information values('아시아','타지키스탄','쿠르곤텝파', 37.845614, 68.798962);
+insert into map_information values('아시아','타지키스탄','쿨롭', 37.927412, 69.800185);

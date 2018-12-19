@@ -1,0 +1,4 @@
+insert into map_information values('아시아','키르기스스탄','비슈케크', 42.874631, 74.569763);
+insert into map_information values('아시아','키르기스스탄','톡마크', 42.822389, 75.317888);
+insert into map_information values('아시아','키르기스스탄','나린', 41.427403, 75.984059);
+insert into map_information values('아시아','키르기스스탄','탈라스', 42.531803, 72.230423);

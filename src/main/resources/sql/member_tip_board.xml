@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberTipBoardMapper">
+
+	<resultMap type="memberTipBoard" id="memberTipBoardListRM">
+	 	<result property="no" column="no"/>
+	 	<result property="title" column="title"/>
+	 	<result property="count" column="count"/>
+	 	<result property="wDate" column="w_date"/><!-- 주의 -->
+	 	<result property="member.id" column="id"/>
+	 </resultMap> 
+	
+	<resultMap type="memberTipBoard" id="memberTipBoardRM" extends="memberTipBoardListRM">
+		<result property="content" column="content"/>
+		<result property="img" column="img"/>
+		<result property="mapInfomation.city" column="city"/>
+		<!-- FileUpload 부분 추가함 -->
+		<result property="orgfilename" column="orgfilename"/>
+		<result property="newfilename" column="newfilename"/>
+	</resultMap>
+	
+	<insert id="writeMemberTipBoard" parameterType="memberTipBoard">
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			SELECT membertip_board_seq.nextVal FROM dual
+		</selectKey>
+		INSERT INTO membertip_board
+		(no, title, content, count, w_date, id, img, orgfilename, newfilename, city)
+		VALUES(#{no},#{title},#{content},#{count},sysdate,#{member.id},#{img},#{orgfilename},#{newfilename},#{mapInfomation.city})
+	</insert>
+	
+	<select id="showMemberTipContent" resultMap="memberTipBoardRM" parameterType="int">
+		SELECT no, title, content, count, w_date, id, img, orgfilename, newfilename, city
+		FROM membertip_board
+		WHERE no=#{value}
+	</select>
+	
+	<update id="updateMemberTipCount" parameterType="int">
+		UPDATE membertip_board SET count=count+1 WHERE no=#{value}
+	</update>
+	
+	<delete id="deleteMemberTipBoard" parameterType="int">
+		DELETE FROM membertip_board WHERE no=#{value}
+	</delete>
+	
+	<update id="updateMemberTipBoard" parameterType="memberTipBoard">
+		UPDATE membertip_board
+		SET title=#{title}, content=#{content}, w_date=sysdate, city=#{mapInfomation.city},
+		img=#{img}, orgfilename = #{orgfilename}, newfilename=#{newfilename}
+		WHERE no=#{no} 
+	</update>
+	
+	<select id="totalMemberTipCount" resultType="int">
+		SELECT COUNT(-1) FROM membertip_board
+	</select>
+	
+	<select id="getMemberTipBoardList" resultMap="memberTipBoardListRM" parameterType="int">
+		SELECT no, title, count, w_date, id FROM
+			(SELECT no, title, count, w_date, CEIL(rownum/5) as page, id FROM
+				(SELECT no, title, count, to_char(w_date, 'YYYY.MM.DD') w_date, id 
+					FROM membertip_board ORDER BY no DESC))
+		WHERE page=#{value}
+	</select>
+	
+</mapper>	

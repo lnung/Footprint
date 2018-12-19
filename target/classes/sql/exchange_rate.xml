@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ExchangeRateMapper">
+	<resultMap type="exchangeRate" id="exchangeRateSelectMap">
+		<result property="country" column="country" />
+		<result property="exchange" column="exchange" />
+		<result property="wDate" column="w_date"/>
+		<result property="unit" column="unit"/>
+	</resultMap>
+	
+	<select id="getExchangeRate" resultMap="exchangeRateSelectMap" parameterType="string">
+		<![CDATA[
+		SELECT country, exchange, w_date, unit FROM
+			(SELECT country, exchange, w_date, unit FROM
+				(SELECT country, exchange, to_char(w_date,'YYYY.MM.DD') w_date, unit FROM exchange_rate)
+			WHERE country = #{value} ORDER BY w_date)
+		WHERE rownum <= 7
+		]]>
+	</select>
+	
+	<insert id="insertExchangeRate" parameterType="exchangeRate">
+		INSERT INTO exchange_rate(country, exchange, w_date, unit)
+		VALUES (#{country}, #{exchange}, sysdate, #{unit})
+	</insert>
+		
+</mapper>

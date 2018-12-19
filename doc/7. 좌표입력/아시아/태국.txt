@@ -1,0 +1,7 @@
+insert into map_information values('아시아','태국','매홍손', 19.299296, 97.964767);
+insert into map_information values('아시아','태국','방콕', 13.757395, 100.493124);
+insert into map_information values('아시아','태국','치앙마이', 18.703561, 98.971862);
+insert into map_information values('아시아','태국','코사무이', 9.512229, 100.012985);
+insert into map_information values('아시아','태국','파타야', 12.920246, 100.877989);
+insert into map_information values('아시아','태국','푸켓', 7.952094, 98.338094);
+insert into map_information values('아시아','태국','후아힌', 12.572202, 99.955281);

@@ -1,0 +1,10 @@
+insert into map_information values('유럽', '그리스', '아테네', 37.983792, 23.727551);
+insert into map_information values('유럽', '그리스', '테살로니키', 40.640071, 22.944422);
+insert into map_information values('유럽', '그리스', '칼라마타', 37.042246, 22.114128);
+insert into map_information values('유럽', '그리스', '파트라스', 38.246677, 21.734581);
+insert into map_information values('유럽', '그리스', '아그리니오', 38.624489, 21.409616);
+insert into map_information values('유럽', '그리스', '트리칼라', 39.555739, 21.767895);
+insert into map_information values('유럽', '그리스', '라리사', 39.639004, 22.419134);
+insert into map_information values('유럽', '그리스', '요아니나', 39.665035, 20.853741);
+insert into map_information values('유럽', '그리스', '케르키라', 39.624991, 19.922348);
+

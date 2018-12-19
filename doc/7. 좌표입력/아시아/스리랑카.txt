@@ -1,0 +1,3 @@
+insert into map_information values('아시아','스리랑카','콜롬보', 6.860204, 80.053491);
+insert into map_information values('아시아','스리랑카','캔디', 7.290579, 80.633724);
+insert into map_information values('아시아','스리랑카','갈', 6.053529, 80.220976);

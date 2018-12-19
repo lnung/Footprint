@@ -1,0 +1,9 @@
+insert into map_information values('아시아','동티모르','딜리', -8.555583, 125.577541);
+insert into map_information values('아시아','동티모르','쿠팡', -10.177077, 123.607179);
+insert into map_information values('아시아','동티모르','티모르섬', -9.862822, 124.330913);
+insert into map_information values('아시아','동티모르','수아이', -9.329488, 125.269781);
+insert into map_information values('아시아','동티모르','말리아나', -8.983801, 125.220426);
+insert into map_information values('아시아','동티모르','사므', -9.002046, 125.647818);
+insert into map_information values('아시아','동티모르','비케케', -8.859987, 126.364356);
+insert into map_information values('아시아','동티모르','바우카우', -8.473092, 126.455372);
+insert into map_information values('아시아','동티모르','로스팔로스', -8.520696, 127.002537);

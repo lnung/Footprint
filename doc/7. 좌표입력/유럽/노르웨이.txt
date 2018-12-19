@@ -1,0 +1,4 @@
+insert into map_information values('유럽', '노르웨이', '베르겐', 60.391237, 5.321818);
+insert into map_information values('유럽', '노르웨이', '스타방에르', 58.970092, 5.732569);
+insert into map_information values('유럽', '노르웨이', '오슬로', 59.913997, 10.751971);
+insert into map_information values('유럽', '노르웨이', '트론헤임', 63.430495, 10.395063);

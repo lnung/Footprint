@@ -1,0 +1,5 @@
+insert into map_information values('아시아','투르크메니스탄','아슈하바트', 37.959906, 58.325724);
+insert into map_information values('아시아','투르크메니스탄','세르다르', 38.976326, 56.277305);
+insert into map_information values('아시아','투르크메니스탄','마리', 37.609271, 61.864333);
+insert into map_information values('아시아','투르크메니스탄','발카나바트', 39.523903, 54.335956);
+insert into map_information values('아시아','투르크메니스탄','투르크멘바시', 40.033688, 52.975929);

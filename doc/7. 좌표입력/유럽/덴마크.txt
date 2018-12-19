@@ -1,0 +1,6 @@
+insert into map_information values('유럽', '덴마크', '오덴세', 55.403758, 10.402371);
+insert into map_information values('유럽', '덴마크', '오르후스', 56.162939, 10.203924);
+insert into map_information values('유럽', '덴마크', '올보르', 57.049312, 9.922577);
+insert into map_information values('유럽', '덴마크', '코펜하겐(쾨벤하운)', 55.675493, 12.569842);
+insert into map_information values('유럽', '덴마크', '란데르스', 56.460596, 10.036524);
+insert into map_information values('유럽', '덴마크', '에스비에르', 55.476515, 8.459393);

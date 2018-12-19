@@ -1,0 +1,7 @@
+insert into map_information values('아시아','인도네시아','자카르타', -6.208836, 106.845479);
+insert into map_information values('아시아','인도네시아','발리', -8.340586, 115.092055);
+insert into map_information values('아시아','인도네시아','롬복섬', -8.650972, 116.324943);
+insert into map_information values('아시아','인도네시아','메단', 3.595669, 98.673707);
+insert into map_information values('아시아','인도네시아','수라바야', -7.257464, 112.752088);
+insert into map_information values('아시아','인도네시아','마카사르', -5.147657, 119.432732);
+insert into map_information values('아시아','인도네시아','동티모르', -8.667917, 125.903322);

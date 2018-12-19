@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MapInformationMapper">
+
+	<resultMap type="mapInformation" id="mapInformationSelectMap">
+		<result property="world" column="world" />
+		<result property="nation" column="nation" />
+		<result property="city" column="city"/>
+		<result property="xCoordinate" column="x_coordinate"/>
+		<result property="yCoordinate" column="y_coordinate"/>
+	</resultMap>
+	
+	<sql id="insert-values">
+		world, nation, city, x_coordinate, y_coordinate
+	</sql>
+	
+	<insert id="insertMapInformation" parameterType="mapInformation">
+		INSERT INTO map_information(<include refid="insert-values"/>)
+		VALUES(#{world}, #{nation}, #{city}, #{x_coordinate}, #{yCoordinate})
+	</insert>
+
+	<select id= "getAllMapInformation" resultMap="mapInformationSelectMap">
+		SELECT
+		<include refid="insert-values"/>
+		FROM map_information ORDER BY world, nation, city
+	</select>
+	
+	<select id="getWorldMapInformation" resultMap="mapInformationSelectMap">
+		SELECT
+		<include refid="insert-values"/>
+		FROM map_information
+		WHERE city = world
+	</select>
+	
+	<select id="getNationMapInformation" parameterType="string" resultMap="mapInformationSelectMap">
+		SELECT
+		<include refid="insert-values"/>
+		FROM (SELECT <include refid="insert-values"/> FROM map_information WHERE world = #{value})
+		WHERE city = nation AND world != nation 
+	</select>
+	
+	<select id="getCityMapInformation" parameterType="string" resultMap="mapInformationSelectMap">
+		SELECT
+		<include refid="insert-values"/>
+		FROM (SELECT <include refid="insert-values"/> FROM map_information WHERE nation = #{value})
+		WHERE nation != city 
+	</select>
+	
+	<select id="getNationCoordinate" parameterType="string" resultMap="mapInformationSelectMap">
+		SELECT world, nation, x_coordinate, y_coordinate FROM map_information
+		WHERE world = #{value} AND world = nation
+	</select>
+	
+	<select id="getCityCoordinate" parameterType="string" resultMap="mapInformationSelectMap">
+		SELECT nation, city, x_coordinate, y_coordinate FROM map_information WHERE nation = #{value} AND nation = city
+	</select>
+	
+	<select id="getMapInformation" parameterType="string" resultMap="mapInformationSelectMap">
+		SELECT 
+		<include refid="insert-values"/>
+		FROM map_information 
+		WHERE city = #{value}
+	</select>
+</mapper>

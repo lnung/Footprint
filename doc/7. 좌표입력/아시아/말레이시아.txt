@@ -1,0 +1,7 @@
+insert into map_information values('아시아','말레이시아','쿠알라룸푸르', 3.139011, 101.686855);
+insert into map_information values('아시아','말레이시아','콴탄', 3.763307, 103.220196);
+insert into map_information values('아시아','말레이시아','말라카', 2.189603, 102.250086);
+insert into map_information values('아시아','말레이시아','코타키나발루', 5.980414, 116.073452);
+insert into map_information values('아시아','말레이시아','이포', 4.597143, 101.089919);
+insert into map_information values('아시아','말레이시아','피낭섬', 5.367326, 100.248649);
+insert into map_information values('아시아','말레이시아','랑카위섬', 6.350006, 99.800001);

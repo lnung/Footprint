@@ -1,0 +1,1 @@
+insert into map_information values('아시아','네팔','카트만두', 27.717235, 85.323938);

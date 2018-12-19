@@ -1,0 +1,118 @@
+create table member
+(id varchar2(30) primary key,
+password varchar2(30) not null,
+name varchar2(20) not null,
+birth varchar2(20) not null,
+address_api varchar2(100) not null,
+address_input varchar2(50) not null,
+email varchar2(40) not null,
+admin number default 0
+);
+
+create table map_information
+(world varchar2(30) not null,
+nation varchar2(30) not null,
+city varchar2(30) primary key, 
+x_coordinate number(15) not null,
+y_coordinate number(15) not null
+);
+
+create table review_board
+(no number primary key,
+title varchar2(100) not null,
+content varchar2(1000) not null,
+count number,
+w_date date not null,
+id varchar2(30) not null,
+img varchar2(1000),
+orgfilename varchar2(500),
+newfilename varchar2(500),
+city varchar(30) not null,
+CONSTRAINT FK_MEMBER1 FOREIGN KEY (id) REFERENCES member(id) on delete cascade,
+CONSTRAINT FK_NATION1 FOREIGN KEY (city) REFERENCES map_information(city) on delete cascade
+);
+
+create table membertip_board
+(no number primary key,
+title varchar2(100) not null,
+content varchar2(1000) not null,
+count number,
+w_date date not null,
+id varchar2(30) not null,
+img varchar2(1000),
+orgfilename varchar2(500),
+newfilename varchar2(500),
+city varchar(30) not null,
+CONSTRAINT FK_MEMBER2 FOREIGN KEY (id) REFERENCES member(id) on delete cascade,
+CONSTRAINT FK_NATION2 FOREIGN KEY (city) REFERENCES map_information(city) on delete cascade
+);
+
+create table admintip_board
+(no number primary key,
+title varchar2(100) not null,
+content varchar2(1000) not null,
+count number,
+w_date date not null,
+id varchar2(30) not null,
+img varchar2(1000),
+orgfilename varchar2(500),
+newfilename varchar2(500),
+city varchar(30) not null,
+CONSTRAINT FK_MEMBER3 FOREIGN KEY (id) REFERENCES member(id) on delete cascade,
+CONSTRAINT FK_NATION3 FOREIGN KEY (city) REFERENCES map_information(city) on delete cascade
+);
+
+create table admin_board
+(no number primary key,
+title varchar2(100) not null,
+content varchar2(1000) not null,
+count number,
+w_date date not null,
+id varchar2(30) not null,
+img varchar2(1000),
+orgfilename varchar2(500),
+newfilename varchar2(500),
+CONSTRAINT FK_MEMBER4 FOREIGN KEY (id) REFERENCES member(id) on delete cascade
+);
+
+create table member_board
+(location varchar2(50),
+content varchar2(4000) not null,
+w_date date not null,
+trip_date varchar2(100),
+id varchar2(30) not null,
+city varchar(30) not null,
+CONSTRAINT FK_MEMBER5 FOREIGN KEY (id) REFERENCES member(id) on delete cascade,
+CONSTRAINT FK_NATION5 FOREIGN KEY (city) REFERENCES map_information(city) on delete cascade
+);
+
+create table search(
+word varchar2(50) primary key,
+count number(10)
+);
+
+create sequence review_board_seq
+start with 1
+increment by 1
+nocache;
+
+create sequence membertip_board_seq
+start with 1
+increment by 1
+nocache;
+
+create sequence admintip_board_seq
+start with 1
+increment by 1
+nocache;
+
+create sequence admin_board_seq
+start with 1
+increment by 1
+nocache;
+
+
+
+
+
+

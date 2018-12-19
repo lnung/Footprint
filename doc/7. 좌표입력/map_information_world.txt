@@ -1,0 +1,6 @@
+insert into map_information values('아시아', '아시아', '아시아', 59.266187, 94.184148);
+insert into map_information values('유럽', '유럽', '유럽', 48.258731, 16.939331);
+insert into map_information values('아프리카', '아프리카', '아프리카', 19.626081, 15.708861);
+insert into map_information values('남아메리카', '남아메리카', '남아메리카', -11.870848, -55.487431);
+insert into map_information values('북아메리카', '북아메리카', '북아메리카', 45.879016, -101.405285);
+insert into map_information values('오세아니아', '오세아니아', '오세아니아', -25.459825, 134.006902);

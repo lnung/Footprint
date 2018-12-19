@@ -1,0 +1,8 @@
+insert into map_information values('아시아','파키스탄','카라치', 24.860597, 67.001154);
+insert into map_information values('아시아','파키스탄','퀘타', 30.179848, 66.974974);
+insert into map_information values('아시아','파키스탄','물탄', 30.157464, 71.524916);
+insert into map_information values('아시아','파키스탄','라호르', 31.520315, 74.358734);
+insert into map_information values('아시아','파키스탄','라왈핀디', 33.565117, 73.016914);
+insert into map_information values('아시아','파키스탄','페샤와르', 34.015143, 71.524916);
+insert into map_information values('아시아','파키스탄','이슬라마바드', 33.684358, 73.047925);
+insert into map_information values('아시아','파키스탄','파이살라바드', 31.450372, 73.134961);

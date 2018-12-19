@@ -1,0 +1,1 @@
+insert into map_information values('아시아','우즈베키스탄','타슈켄트', 41.299502, 69.240073);

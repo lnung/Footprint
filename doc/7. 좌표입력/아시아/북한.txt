@@ -1,0 +1,1 @@
+insert into map_information values('아시아','북한','평양', 39.039219, 125.762515);
